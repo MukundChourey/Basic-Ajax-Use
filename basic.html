@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <div id="load" class="container">
+      <br>
+      <br>
+      <center>
+      <div id="loaddata">
+        <h2>this will change...</h2>
+      </div>
+      <button class="btn btn-success" id="btnclick" onclick="func()"> Click on this </button>
+      </center>
+    </div>
+
+
+    <script type="text/javascript">
+
+        function func(){
+          var req = new XMLHttpRequest();
+          req.open('GET','load.html',true);
+          req.send();
+
+          req.onreadystatechange = function (){
+            if (req.readyState == 4 && req.status == 200) {
+              document.getElementById('load').innerHTML = req.responseText;
+            }
+          }
+
+        }
+
+
+
+
+
+      // $(document).ready(function(){
+      //
+      //   $('#btnclick').click(function(){
+      //     $('#loaddata').load('load.html', function(){
+      //       alert("this is done");
+      //     });
+      //   });
+      //
+      // });
+
+
+
+
+    </script>
+  </body>
+</html>
