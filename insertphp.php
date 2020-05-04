@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
 
   $q = "INSERT INTO user_details (name,passswd) VALUES ('$username','$password')";
   $query = mysqli_query($con,$q);
-  header('location:insert.php');
+  header('location:index.php');
 
 }
 
